@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "../Components/Pages/Home/Home";
-import Footer from "../Components/parts/Footer/Footer"
+import Footer from "../Components/parts/Footers/Footer"
 import SignUp from "../Components/Pages/SignUp/SignUp"
 import Login from "../Components/Pages/Login/Login";
 import Page404 from "../Components/Pages/Page404/Page404";
