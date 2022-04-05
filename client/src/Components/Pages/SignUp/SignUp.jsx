@@ -10,17 +10,17 @@ export default function SignUp() {
   }
   const SendData =async (e)=>{
     e.preventDefault();
-    await loginUser(user)
-    .then(res => {
-      if (res.success) {
-        localStorage.setItem("token", res.token);
-        console.log("success");
-        const token = localStorage.getItem("token");
-        const decoded = jwt_decode(token);
-        setUser(decoded.user)
-      }
-    })
-    .catch(rej => console.log(rej))
+    // await loginUser(user)
+    // .then(res => {
+    //   if (res.success) {
+    //     localStorage.setItem("token", res.token);
+    //     console.log("success");
+    //     const token = localStorage.getItem("token");
+    //     const decoded = jwt_decode(token);
+    //     setUser(decoded.user)
+    //   }
+    // })
+    // .catch(rej => console.log(rej))
   }
   return (
     <div className='main'>
