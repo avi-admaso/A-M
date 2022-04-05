@@ -4,13 +4,11 @@ import RouterApp from "./Router/RouterApp";
 import Login from "./Components/Pages/Login/Login";
 import { UserProvider } from "./context/UserContext";
 function App() {
-  // useEffect(()=>{
-  //   localStorage.removeItem("token")
-  // },[])
+
   return (
     <div className="App">
       <UserProvider>
-        {/* <RouterApp/> */}
+        <RouterApp/>
         <Login />
       </UserProvider>
 
