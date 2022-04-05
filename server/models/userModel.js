@@ -6,10 +6,11 @@ const User = new mongoose.Schema(
     email: { type: String, require: true, unique: true },
     image:{type: String , default:""},
     phoneNumber:{type: String, require: true},
-    role:{type: Array, require: true},
+    isAdmin:{type: Boolean},
     historyAppointment:{type: Array},
     nextAppointment:{type: Array},
     businessName:{type: String, require: true},
+    password:{type: String, require: true}
   },
   { timestamps: true }
 );
