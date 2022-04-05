@@ -28,9 +28,7 @@ const NavBar = () => {
     <div className={`${classes.root} header`}>
       <AppBar position="static" style={{background:"black"}}>
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
-          </IconButton>
+          
           <Typography variant="h6" className={classes.title}>
             A&M
           </Typography>
