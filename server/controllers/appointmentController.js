@@ -13,9 +13,9 @@ module.exports = {
     },
     GetAppointmentById: async (req, res) => {
         try {
-            const user = await appointment.findOne({ _id: req.params.id });
-            if (user) return res.status(200).json({ success: true, user });
-            res.status(404).json({ success: false, message: "no user found" });
+            const appointment = await appointment.findOne({ _id: req.params.id });
+            if (appointment) return res.status(200).json({ success: true, appointment });
+            res.status(404).json({ success: false, message: "appointment not found" });
         }
         catch (err) {
             res.status(500).json({ success: false, message: err.message });
@@ -34,11 +34,11 @@ module.exports = {
     AddAppointment: async (req, res) => {
         try {
             const { appointmentName, title, start, end, orderName } = req.body;
-            const user = new appointment({ appointmentName, title, start, end,orderName });
-            if (!user) return res.status(400).json({ success: false, message: "user not valid" })
+            const appointment = new appointment({ appointmentName, title, start, end,orderName });
+            if (!appointment) return res.status(400).json({ success: false, message: "appointment not valid" })
 
             await appointment.create(user)
-                .then(() => res.status(201).json({ success: true, message: "user successfully added" }))
+                .then(() => res.status(201).json({ success: true, message: "appointment added successfully " }))
                 .catch((err) => res.status(400).json({ success: false, message: err.message }))
         }
         catch (err) {
@@ -49,7 +49,7 @@ module.exports = {
         try {
             if (await appointment.exists({ _id: req.params.id })) {
                 return await appointment.findByIdAndUpdate(req.params.id, req.body)
-                    .then(() => res.status(200).json({ success: true, message: "user updated successfully" }))
+                    .then(() => res.status(200).json({ success: true, message: "appointment updated successfully" }))
                     .catch((err) => res.status(400).json({ success: false, message: err.message }))
             }
             res.status(404).json({ success: false, message: "no user found" });
@@ -62,7 +62,7 @@ module.exports = {
         try {
             if (await appointment.exists({ _id: req.params.id })) {
                 return await appointment.findByIdAndRemove(req.params.id)
-                    .then(() => res.status(200).json({ success: true, message: "user deleted successfully" }))
+                    .then(() => res.status(200).json({ success: true, message: "appointment deleted successfully" }))
                     .catch(err => res.status(400).json({ success: false, message: err.message }))
             }
             res.status(404).json({ success: false, message: "no user found" });
