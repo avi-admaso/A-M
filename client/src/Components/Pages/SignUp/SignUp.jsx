@@ -2,14 +2,15 @@ import { useState , useContext} from 'react';
 import { registerNewUser } from '../../../services/userService';
 import { UserContext } from '../../../context/UserContext';
 import jwt_decode from "jwt-decode";
+import './signUp.css'
 export default function SignUp() {
-  const {user, setUser} = useContext(UserContext)
+  const {user, setUser ,setIsLogin} = useContext(UserContext)
   const InputValue = (e) => {
     user[e.target.name] = e.target.value
     setUser({ ... user })
   }
   const SendData =async (e)=>{
-    e.preventDefault();
+    // e.preventDefault();
     await registerNewUser(user)
     .then(res => {
       if (res.success) {
@@ -18,23 +19,25 @@ export default function SignUp() {
         const token = localStorage.getItem("token");
         const decoded = jwt_decode(token);
         setUser(decoded.user)
+        setIsLogin(true)
       }
     })
     .catch(rej => console.log(rej))
   }
   return (
-    <div className='main'>
+    <div className='signUp'>
      <h1>Sign Up</h1> 
-     <label htmlFor="">Email</label>
-      <input type="text" name='email' onChange={InputValue}/>
+     <label htmlFor="">first Name</label>
+      <input type="text" name='firstName' onChange={InputValue}/>
+      <label htmlFor="">last Name</label>
+      <input type="text" name='lastName' onChange={InputValue}/>
       <label htmlFor="">Email</label>
       <input type="text" name='email' onChange={InputValue}/>
-      <label htmlFor="">Email</label>
-      <input type="text" name='email' onChange={InputValue}/>
-      <label htmlFor="">Email</label>
-      <input type="text" name='email' onChange={InputValue}/>
-      <label htmlFor="">Email</label>
-      <input type="text" name='email' onChange={InputValue}/>
+      <label htmlFor="">phone Number</label>
+      <input type="text" name='phoneNumber' onChange={InputValue}/>
+      <label htmlFor="">password</label>
+      <input type="text" name='password' onChange={InputValue}/>
+      <button onClick={SendData}>Create</button>
     </div>
 
   )

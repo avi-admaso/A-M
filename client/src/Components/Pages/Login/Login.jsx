@@ -4,13 +4,13 @@ import { UserContext } from '../../../context/UserContext'
 import jwt_decode from "jwt-decode";
 import './login.css'
 export default function Login() {
-  const {user, setUser} = useContext(UserContext)
+  const {user, setUser ,setIsLogin} = useContext(UserContext)
   const InputValue = (e) => {
     user[e.target.name] = e.target.value
     setUser({ ... user })
   }
-  const SendData =async (e)=>{
-    e.preventDefault();
+  const SendData =async ()=>{
+    // e.preventDefault();
     await loginUser(user)
     .then(res => {
       if (res.success) {
@@ -19,6 +19,7 @@ export default function Login() {
         const token = localStorage.getItem("token");
         const decoded = jwt_decode(token);
         setUser(decoded.user)
+        setIsLogin(true)
       }
     })
     .catch(rej => console.log(rej))
