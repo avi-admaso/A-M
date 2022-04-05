@@ -13,6 +13,7 @@ import SetAppointment from "../Components/Pages/SetAppointment/SetAppointment";
 import SideBar from "../Components/parts/SideBar/SideBar";
 import Calendars from "../Components/Pages/Calendar/Calendars";
 import NavBar from "../Components/parts/navbar/Nav-Bar"
+import Landing from "../Components/Pages/Landing/Landing";
 
 
 export default function RouterApp(){
@@ -22,7 +23,8 @@ export default function RouterApp(){
         <SideBar/>
       <Routes>
         {/** Public Routes **/}
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Landing/>} />
+        <Route path="/Home" element={<Home />} />
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/ContactUs" element={<ContactUs />} />
