@@ -1,5 +1,5 @@
 // const BASIC_API = process.env.NODE_ENV === 'production' ? "https://team-ware.herokuapp.com/register" : 'http://localhost:8100/register';
-const BASIC_API = "http://localhost:8100/user"
+const BASIC_API = "http://localhost:8100/api/user"
 
 export const GetAll = async () => {
     try {
