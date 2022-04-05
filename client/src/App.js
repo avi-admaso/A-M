@@ -1,12 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Calendar from './Components/Pages/Calendar/Calendar';
+import Calendars from './Components/Pages/Calendar/Calendars';
 
 function App() {
   return (
     <div className="App">
-      <Calendar/>
+      <Calendars/>
     </div>
   );
 }
