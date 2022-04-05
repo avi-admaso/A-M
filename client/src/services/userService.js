@@ -3,7 +3,7 @@ const BASIC_API = "http://localhost:8100/api/users"
 
 export const GetAll = async () => {
     try {
-        return await fetch(`${BASIC_API}`,options)
+        return await fetch(`${BASIC_API}`)
             .then(res => res.json())
             .catch(err => { return err })
     } catch (error) {
@@ -12,7 +12,7 @@ export const GetAll = async () => {
 }
 export const GetUserById = async (id) => {
     try {
-        return await fetch(`${BASIC_API}/${id}`,options)
+        return await fetch(`${BASIC_API}/${id}`)
             .then(response => response.json())
             .catch(reject => console.error(reject))
     } catch (error) {
