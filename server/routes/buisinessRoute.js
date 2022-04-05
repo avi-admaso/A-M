@@ -2,10 +2,10 @@ const buisinessRoutes = require("express").Router();
 
 const { GetBuisiness,GetBuisinessById, AddBuisiness, UpdateBuisiness, DeleteBuisiness } = require("../controllers/buisinessController");
 
-buisinessRoutes.get("/", GetBuisiness);
-buisinessRoutes.get("/:id", GetBuisinessById);
-buisinessRoutes.post("/", AddBuisiness);
-buisinessRoutes.put("/:id", UpdateBuisiness);
-buisinessRoutes.delete("/:id", DeleteBuisiness);
+buisinessRoutes.get("/buisiness", GetBuisiness);
+buisinessRoutes.get("/buisiness/:id", GetBuisinessById);
+buisinessRoutes.post("/buisiness", AddBuisiness);
+buisinessRoutes.put("/buisiness/:id", UpdateBuisiness);
+buisinessRoutes.delete("/buisiness/:id", DeleteBuisiness);
 
 module.exports = buisinessRoutes;
