@@ -2,6 +2,7 @@ import { useState , useContext} from 'react'
 import { loginUser } from '../../../services/userService'
 import { UserContext } from '../../../context/UserContext'
 import jwt_decode from "jwt-decode";
+import './login.css'
 export default function Login() {
   const {user, setUser} = useContext(UserContext)
   const InputValue = (e) => {
@@ -23,7 +24,7 @@ export default function Login() {
     .catch(rej => console.log(rej))
   }
   return (
-    <div className='main'>
+    <div className='login'>
       <h1>Login</h1>
       <label htmlFor="">Email</label>
       <input type="text" name='email' onChange={InputValue}/>

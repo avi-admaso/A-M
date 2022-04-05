@@ -8,9 +8,10 @@ export default function SignUp() {
     user[e.target.name] = e.target.value
     setUser({ ... user })
   }
+
   const SendData =async (e)=>{
     e.preventDefault();
-    await loginUser(user)
+    await registerNewUser(user)
     .then(res => {
       if (res.success) {
         localStorage.setItem("token", res.token);
@@ -22,6 +23,22 @@ export default function SignUp() {
     })
     .catch(rej => console.log(rej))
   }
+
+  // const SendData =async (e)=>{
+  //   e.preventDefault();
+  //   await loginUser(user)
+  //   .then(res => {
+  //     if (res.success) {
+  //       localStorage.setItem("token", res.token);
+  //       console.log("success");
+  //       const token = localStorage.getItem("token");
+  //       const decoded = jwt_decode(token);
+  //       setUser(decoded.user)
+  //     }
+  //   })
+  //   .catch(rej => console.log(rej))
+  // }
+
   return (
     <div className='main'>
      <h1>Sign Up</h1> 
