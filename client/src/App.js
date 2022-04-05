@@ -1,10 +1,19 @@
 import "./App.css";
+import { useEffect } from 'react'
 import RouterApp from "./Router/RouterApp";
-
+import Login from "./Components/Pages/Login/Login";
+import { UserProvider } from "./context/UserContext";
 function App() {
+  // useEffect(()=>{
+  //   localStorage.removeItem("token")
+  // },[])
   return (
     <div className="App">
-     <RouterApp/>
+      <UserProvider>
+        {/* <RouterApp/> */}
+        <Login />
+      </UserProvider>
+
     </div>
   );
 }
