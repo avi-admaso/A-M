@@ -56,9 +56,9 @@ export default function Calendars() {
       value={newEvent.title} onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })}
     />
     <DatePicker placeholderText='Start Data' style={{ marginRight: "10px" }}
-      selected={newEvent.start} onChange={(start) => setNewEvent({ ...newEvent, start })} showTimeSelect />
+      selected={newEvent.start} onChange={(start) => setNewEvent({ ...newEvent, start })} showTimeSelect  timeIntervals={40}/>
     <DatePicker placeholderText='End Data'
-      selected={newEvent.end} onChange={(end) => setNewEvent({ ...newEvent, end })} showTimeSelect />
+      selected={newEvent.end} onChange={(end) => setNewEvent({ ...newEvent, end })} showTimeSelect  timeIntervals={40}/>
     <button style={{marginTop:"10px"}} onClick={handleAddEvent}>Click</button>  
     </div>
     <Calendar
