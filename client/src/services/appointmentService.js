@@ -1,4 +1,4 @@
-const BASIC_API = "http://localhost:8100/appointment"
+const BASIC_API = "http://localhost:8100/api/appointment"
 
 export const GetAllAppointment = async () => {
     try {

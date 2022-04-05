@@ -1,4 +1,4 @@
-const BASIC_API = "http://localhost:8100/business"
+const BASIC_API = "http://localhost:8100/api/business"
 
 export const GetAllBusiness = async () => {
     try {
