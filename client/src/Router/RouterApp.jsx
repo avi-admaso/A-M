@@ -1,13 +1,13 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from "../Components/Layout/Header/Header.component";
-import Home from "../Components/Pages/Home/Home.component";
-import Footer from "../Components/Layout/Footer/Footer.component";
-import SignUp from "../Components/Pages/SignUp/SignUp.component";
-import Login from "../Components/Pages/Login/Login.component";
-import Page404 from "../Components/Pages/Page404/Page404.component";
-import Profile from "../Components/Pages/Profile/Profile.component";
-import RequiredAuth from "../Components/Pages/RequiredAuth/RequiredAuth";
-import ContactUs from "../Components/Pages/ContactUs/ContactUs.component";
+import Header from "../Components/Layout/Header/Header";
+import Home from "../Components/Pages/Home/Home";
+import Footer from "../Components/Layout/Footer/Footer";
+import SignUp from "../Components/Pages/SignUp/SignUp"
+import Login from "../Components/Pages/Login/Login";
+import Page404 from "../Components/Pages/Page404/Page404";
+import Profile from "../Components/Pages/Profile/Profile";
+import RequiredAuth from "../Components/parts/RequiredAuth/RequiredAuth"
+import ContactUs from "../Components/Pages/ContactUs/ContactUs";
 import Calendar from "../Components/Pages/Calendar/Calendar";
 
 
