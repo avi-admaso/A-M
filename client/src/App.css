@@ -46,10 +46,9 @@
   
   .footer{
     grid-area: footer;
-    background-color: teal;
   }
   
-  .header,.main,.footer{
+  .header,.main{
     display: flex;
     justify-content: center;
     align-items: center;
