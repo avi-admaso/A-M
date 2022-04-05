@@ -1,0 +1,11 @@
+.login{
+    position: absolute;
+    background: green;
+    width: 30vw;
+    left: 50%;
+    height: 30vh;
+    /* display: flex; */
+}
+/* .login input{
+    width: 40;
+} */
