@@ -6,7 +6,7 @@ import SignUp from "../Components/Pages/SignUp/SignUp"
 import Login from "../Components/Pages/Login/Login";
 import Page404 from "../Components/Pages/Page404/Page404";
 import Profile from "../Components/Pages/Profile/Profile";
-import RequiredAuth from "../Components/Pages/RequiredAuth/RequiredAuth";
+import RequiredAuth from "../Components/parts/RequiredAuth/RequiredAuth"
 import ContactUs from "../Components/Pages/ContactUs/ContactUs";
 import Calendar from "../Components/Pages/Calendar/Calendar";
 
