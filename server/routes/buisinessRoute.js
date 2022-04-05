@@ -7,7 +7,7 @@ buisinessRoutes.get("/buisiness/:id", GetBuisinessById);
 buisinessRoutes.post("/buisiness", AddBuisiness);
 buisinessRoutes.put("/buisiness/:id", UpdateBuisiness);
 buisinessRoutes.delete("/buisiness/:id", DeleteBuisiness);
-buisinessRoutes.post("/register", register);
-buisinessRoutes.post("/login", login);
+buisinessRoutes.post("/buisiness/register", register);
+buisinessRoutes.post("/buisiness/login", login);
 
 module.exports = buisinessRoutes;

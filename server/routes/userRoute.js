@@ -7,6 +7,6 @@ userRoutes.get("/users/:id", GetUserById);
 userRoutes.post("/users", Adduser);
 userRoutes.put("/users/:id", Updateuser);
 userRoutes.delete("/users/:id", Deleteuser);
-userRoutes.post("/register", register);
-userRoutes.post("/login", login);
+userRoutes.post("/users/register", register);
+userRoutes.post("/users/login", login);
 module.exports = userRoutes;
