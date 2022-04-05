@@ -14,6 +14,7 @@ import SideBar from "../Components/parts/SideBar/SideBar";
 import Calendars from "../Components/Pages/Calendar/Calendars";
 import NavBar from "../Components/parts/navbar/Nav-Bar"
 import Landing from "../Components/Pages/Landing/Landing";
+import AboutUs from "../Components/parts/AboutUs/AboutUs";
 
 
 export default function RouterApp(){
@@ -21,6 +22,7 @@ export default function RouterApp(){
     <BrowserRouter>
         <NavBar/>
         <SideBar/>
+        <AboutUs/>
       <Routes>
         {/** Public Routes **/}
         <Route path="/" element={<Landing/>} />
@@ -28,6 +30,7 @@ export default function RouterApp(){
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/ContactUs" element={<ContactUs />} />
+        <Route path="/AboutUs" element={<AboutUs />} />
         
 
         {/** Private Routes **/}
