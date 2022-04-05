@@ -26,7 +26,7 @@ const NavBar = () => {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" style={{background:mode.backgroundNav,color:mode.color}}>
+      <AppBar position="static" style={{background:"red"}}>
         <Toolbar>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <MenuIcon />
