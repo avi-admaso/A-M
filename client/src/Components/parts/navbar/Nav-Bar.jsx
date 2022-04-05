@@ -27,15 +27,12 @@ const NavBar = () => {
   return (
     <div className={classes.root}>
       <AppBar position="static" style={{background:"black"}}>
-        <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
-          </IconButton>
+        <Toolbar>        
           <Typography variant="h6" className={classes.title}>
             A&M
           </Typography>
-          <Button color="inherit">Login</Button>
-          <Button color="inherit">Register</Button>
+          <Button color="inherit">About-us</Button>
+          
         </Toolbar>
       </AppBar>
     </div>

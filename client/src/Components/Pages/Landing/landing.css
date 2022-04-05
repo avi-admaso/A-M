@@ -1,0 +1,15 @@
+.Landing{
+    display: flex;
+    /* flex-direction: column; */ 
+}
+
+.Landing img{
+width: 60%;
+height: 100vh;
+z-index: 100px;
+}
+.Landing input{
+width: 20%;
+height: 20px;
+flex-direction: column;
+}
