@@ -10,7 +10,7 @@ export default function SignUp() {
   }
   const SendData =async (e)=>{
     e.preventDefault();
-    await loginUser(user)
+    await registerNewUser(user)
     .then(res => {
       if (res.success) {
         localStorage.setItem("token", res.token);
