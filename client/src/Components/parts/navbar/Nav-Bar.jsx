@@ -1,4 +1,4 @@
-// import "./nav-bar.css";
+
 import React from "react";
 
 import { makeStyles } from '@material-ui/core/styles';
@@ -26,15 +26,14 @@ const NavBar = () => {
 
   return (
     <div className={`${classes.root} header`}>
-      <AppBar position="static" style={{background:"red"}}>
+      <AppBar position="static" style={{background:"black"}}>
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
-          </IconButton>
+          
           <Typography variant="h6" className={classes.title}>
-            News
+            A&M
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Button color="inherit">About-us</Button>
+          
         </Toolbar>
       </AppBar>
     </div>
