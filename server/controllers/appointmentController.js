@@ -23,8 +23,8 @@ module.exports = {
     },
     AddAppointment: async (req, res) => {
         try {
-            const { appointmentName, title, start, end } = req.body;
-            const user = new appointment({ appointmentName, title, start, end });
+            const { appointmentName, title, start, end, orderName } = req.body;
+            const user = new appointment({ appointmentName, title, start, end,orderName });
             if (!user) return res.status(400).json({ success: false, message: "user not valid" })
 
             await appointment.create(user)
