@@ -45,7 +45,7 @@ export default function Calendars() {
   function handleAddEvent(params) {
     setAllEvent([...allEvent, newEvent])
   }
-  return (<>
+  return (<section className='main'>
     <h1>Calendar</h1>
     <h2>You went to Haircut</h2>
     <div>
@@ -65,6 +65,6 @@ export default function Calendars() {
       endAccessor="end"
       style={{ height: 500, margin: "50px" }}
     />
-  </>)
+  </section>)
 
 }
