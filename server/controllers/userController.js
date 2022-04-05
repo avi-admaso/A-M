@@ -73,8 +73,12 @@ module.exports = {
                 if (err) return res.status(400).json({ success: false, message: err.message });
                 password = hashPassword;
                 const user = new users({ firstName, lastName, phoneNumber, email, password ,businessName })
+
                 await users.create(user)
-                    .then(() => res.status(200).json({ success: true, message: "user added successfully" }))
+                    .then(() => {
+                        const token = jwt.sign({ user }, process.env.SECRET_KEY, { expiresIn: "3h" });
+                        return res.status(200).json({ success: true, message: "user added successfully", token });
+                       })
                     .catch(err => res.status(500).json({ success: false, message: err.message }))
             })
         }

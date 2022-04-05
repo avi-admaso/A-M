@@ -2,14 +2,10 @@
     padding: 0;
     margin: 0;
 }
-.login{
+.signUp{
     position: absolute;
     background: rgb(174, 201, 174);
     width: 30vw;
     right: 35%;
-    height: 30vh;
-    /* display: flex; */
+    height: 50vh;
 }
-/* .login input{
-    width: 40;
-} */
