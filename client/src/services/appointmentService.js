@@ -31,6 +31,22 @@ export const GetAppointmentById = async (id) => {
     }
 }
 
+export const GetAppointmentOfBusiness = async (BusinessName) => {
+    let options ={
+        headers: {
+            "content-type": "application/json",
+            "Authorization": `Bearer ${localStorage.getItem("token")} `
+        }
+    }
+    try {
+        return await fetch(`${BASIC_API}/Business/${BusinessName}`,options)
+            .then(response => response.json())
+            .catch(reject => console.error(reject))
+    } catch (error) {
+        return error
+    }
+}
+
 export const CreateAppointment = async (appointment) => {
     try {
         return await fetch(`${BASIC_API}`, {
