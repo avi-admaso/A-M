@@ -8,10 +8,8 @@ function App() {
   return (
     <div className="App">
       <UserProvider>
-        <RouterApp/>
-        <Login />
+        <RouterApp/>    
       </UserProvider>
-
     </div>
   );
 }

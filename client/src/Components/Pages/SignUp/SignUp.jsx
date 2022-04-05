@@ -36,5 +36,6 @@ export default function SignUp() {
       <label htmlFor="">Email</label>
       <input type="text" name='email' onChange={InputValue}/>
     </div>
+
   )
 }
