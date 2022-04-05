@@ -8,6 +8,7 @@ import getHours from 'date-fns/getHours';
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import "./Style.css";
 
 const locales = {
   // "en-gb": require("date-fns/locale/en-GB")
@@ -43,8 +44,9 @@ export default function Calendars() {
   const [newEvent, setNewEvent] = useState({ title: "", start: "", end: "" })
   const [allEvent, setAllEvent] = useState(events)
 
-  function handleAddEvent(params) {
+  function handleAddEvent() {
     setAllEvent([...allEvent, newEvent])
+    newEvent.allDay = false;
   }
   return (<section className='main'>
     <h1>Calendar</h1>
@@ -54,9 +56,9 @@ export default function Calendars() {
       value={newEvent.title} onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })}
     />
     <DatePicker placeholderText='Start Data' style={{ marginRight: "10px" }}
-      selected={newEvent.start} onChange={(start) => setNewEvent({ ...newEvent, start })} />
+      selected={newEvent.start} onChange={(start) => setNewEvent({ ...newEvent, start })} showTimeSelect />
     <DatePicker placeholderText='End Data'
-      selected={newEvent.end} onChange={(end) => setNewEvent({ ...newEvent, end })} />
+      selected={newEvent.end} onChange={(end) => setNewEvent({ ...newEvent, end })} showTimeSelect />
     <button style={{marginTop:"10px"}} onClick={handleAddEvent}>Click</button>  
     </div>
     <Calendar
