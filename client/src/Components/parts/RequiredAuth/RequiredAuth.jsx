@@ -5,6 +5,7 @@ import { Outlet, Link} from "react-router-dom"
 export default function RequiredAuth() {
     // const {auth} = useContext(authContext)
   return (
-    auth.email ? <Outlet/> : <Link to='Login' />
+    // auth.email ? <Outlet/> : <Link to='Login' />
+    <h1>hhh</h1>
   )
 }
