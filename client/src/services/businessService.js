@@ -1,8 +1,14 @@
 const BASIC_API = "http://localhost:8100/api/business"
 
 export const GetAllBusiness = async () => {
+    let options ={
+        headers: {
+            "content-type": "application/json",
+            "Authorization": `Bearer ${localStorage.getItem("token")} `
+        }
+    }
     try {
-        return await fetch(`${BASIC_API}`)
+        return await fetch(`${BASIC_API}`,options)
             .then(res => res.json())
             .catch(err => { return err })
     } catch (error) {
@@ -10,8 +16,14 @@ export const GetAllBusiness = async () => {
     }
 }
 export const GetBusinessById = async (id) => {
+    let options ={
+        headers: {
+            "content-type": "application/json",
+            "Authorization": `Bearer ${localStorage.getItem("token")} `
+        }
+    }
     try {
-        return await fetch(`${BASIC_API}/${id}`)
+        return await fetch(`${BASIC_API}/${id}`,options)
             .then(response => response.json())
             .catch(reject => console.error(reject))
     } catch (error) {
@@ -25,7 +37,8 @@ export const CreateBusiness = async (Business) => {
             method: 'POST',
             body: JSON.stringify(Business),
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                "Authorization": `Bearer ${localStorage.getItem("token")} `
             },
         })
             .then(response => response.json())
@@ -42,6 +55,7 @@ export const UpdateBusiness = async (id, Business) => {
             body: JSON.stringify(Business),
             headers: {
                 "content-type": "application/json",
+                "Authorization": `Bearer ${localStorage.getItem("token")} `
             }
         })
             .then(response => response.json())
@@ -57,6 +71,7 @@ export const DeleteBusiness = async (id) => {
             method: "DELETE",
             headers: {
                 "content-type": "application/json",
+                "Authorization": `Bearer ${localStorage.getItem("token")} `
             }
         })
             .then(response => response.json())
