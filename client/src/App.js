@@ -3,14 +3,15 @@ import { useEffect } from 'react'
 import RouterApp from "./Router/RouterApp";
 import Login from "./Components/Pages/Login/Login";
 import { UserProvider } from "./context/UserContext";
-import Landing from "./Components/Pages/Landing/Landing";
+import { AppointmentProvider } from "./context/AppointmentContext";
 function App() {
   // useEffect(()=>{localStorage.removeItem("token")},[])
   return (
     <div className="App">
       <UserProvider>
+        <AppointmentProvider>
         <RouterApp/>    
-        {/* <Landing/> */}
+        </AppointmentProvider>
       </UserProvider>
     </div>
   );

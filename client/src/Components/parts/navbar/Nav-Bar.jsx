@@ -1,6 +1,6 @@
 
 import React from "react";
-
+import { Link } from "react-router-dom";
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -32,7 +32,7 @@ const NavBar = () => {
           <Typography variant="h6" className={classes.title}>
             A&M
           </Typography>
-          <Button color="inherit">About-us</Button>
+          <Link  to="/AboutUs" style={{textDecoration: 'none',color:"white"}}>ABOUT-US</Link>
           
         </Toolbar>
       </AppBar>
