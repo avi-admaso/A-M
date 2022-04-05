@@ -6,8 +6,9 @@ import NavBar  from "./Components/parts/navbar/Nav-Bar";
 function App() {
   return (
     <div className="App">
+       <NavBar/>
       <Calendars/>
-      <NavBar/>
+     
     </div>
   );
 }
