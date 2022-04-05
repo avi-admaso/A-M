@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function Page404() {
   return (
-    <div>Page404</div>
+    <div className='main'>Page404</div>
   )
 }
