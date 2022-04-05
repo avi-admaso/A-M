@@ -1,5 +1,5 @@
 // const BASIC_API = process.env.NODE_ENV === 'production' ? "https://team-ware.herokuapp.com/register" : 'http://localhost:8100/register';
-const BASIC_API = "http://localhost:8100/api/user"
+const BASIC_API = "http://localhost:8100/api/users"
 
 export const GetAll = async () => {
     try {
@@ -21,18 +21,24 @@ export const GetUserById = async (id) => {
 }
 export const registerNewUser = async (user) => {
 
-    return await fetch(`${BASIC_API}/register`, {
+try {
+       return await fetch(`${BASIC_API}/register`, {
         method: 'POST', 
         body: JSON.stringify(user),
         headers: {
             'Content-Type': 'application/json'
-        },
+       },
     })
         .then(res => res.json())
-        .catch((err) => { return err });
+        .catch((err) => { return err }); 
+} catch (error) {
+    
+}
+
 }
 export const loginUser = async (user) => {
-    return await fetch(`${BASIC_API}/login`, {
+    try {
+        return await fetch(`${BASIC_API}/login`, {
         method: 'POST',
         body: JSON.stringify(user), 
         headers: {
@@ -40,7 +46,11 @@ export const loginUser = async (user) => {
         },
     })
         .then(res => res.json())
-        .catch((err) => { return err });
+        .catch((err) => { return err });    
+    } catch (error) {
+        
+    }
+
 }
 export const UpdateUser = async (id, user) => {
     try {
@@ -48,7 +58,7 @@ export const UpdateUser = async (id, user) => {
             method: "PUT",
             body: JSON.stringify(user),
             headers: {
-                "content-type": "application/json",
+                "content-type": "application/json"
             }
         })
             .then(response => response.json())
