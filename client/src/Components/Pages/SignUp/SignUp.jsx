@@ -3,6 +3,7 @@ import { registerNewUser } from '../../../services/userService';
 import { UserContext } from '../../../context/UserContext';
 import jwt_decode from "jwt-decode";
 import './signUp.css'
+import { useNavigate } from 'react-router-dom';
 export default function SignUp() {
   const {user, setUser ,setIsLogin} = useContext(UserContext)
   const InputValue = (e) => {
@@ -12,6 +13,8 @@ export default function SignUp() {
 
   const SendData =async (e)=>{
     // e.preventDefault();
+    const navigate = useNavigate();
+
     await registerNewUser(user)
     .then(res => {
       if (res.success) {
@@ -21,6 +24,7 @@ export default function SignUp() {
         const decoded = jwt_decode(token);
         setUser(decoded.user)
         setIsLogin(true)
+        navigate('/Home');
       }
     })
     .catch(rej => console.log(rej))

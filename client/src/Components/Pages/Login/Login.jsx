@@ -2,6 +2,7 @@ import { useState , useContext} from 'react'
 import { loginUser } from '../../../services/userService'
 import { UserContext } from '../../../context/UserContext'
 import jwt_decode from "jwt-decode";
+import { useNavigate } from 'react-router-dom';
 import './login.css'
 export default function Login() {
   const {user, setUser ,setIsLogin} = useContext(UserContext)
@@ -11,6 +12,8 @@ export default function Login() {
   }
   const SendData =async ()=>{
     // e.preventDefault();
+    const navigate = useNavigate();
+
     await loginUser(user)
     .then(res => {
       if (res.success) {
@@ -20,6 +23,7 @@ export default function Login() {
         const decoded = jwt_decode(token);
         setUser(decoded.user)
         setIsLogin(true)
+        navigate('/Home')
       }
     })
     .catch(rej => console.log(rej))

@@ -6,6 +6,8 @@ const LogOutFromApp = ()=>{
     setUser({})
     setIsLogin(false)
     localStorage.removeItem("token")
+    const navigate = useNavigate();
+    navigate('/Login')
 }
 return(
     <div>
