@@ -81,9 +81,9 @@ export default function Calendars() {
       />
 
       <DatePicker placeholderText='Start Data' style={{ marginRight: "10px" }}
-         onChange={(start) => setNewEvent({ ...newEvent, start })} showTimeSelect timeIntervals={30} name="start" />
+        selected={newEvent.start} onChange={(start) => setNewEvent({ ...newEvent, start })} showTimeSelect timeIntervals={30} name="start" />
       <DatePicker placeholderText='End Data'
-         onChange={(end) => setNewEvent({ ...newEvent, end })} showTimeSelect timeIntervals={30} name="end"/>
+        selected={newEvent.end} onChange={(end) => setNewEvent({ ...newEvent, end })} showTimeSelect timeIntervals={30} name="end"/>
       <button style={{ marginTop: "10px" }} onClick={handleAddEvent}>Click</button>
     </div>
 
