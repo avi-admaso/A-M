@@ -10,15 +10,10 @@ export default function Login() {
     user[e.target.name] = e.target.value
     setUser({ ... user })
   }
-<<<<<<< HEAD
   const SendData =async ()=>{
     // e.preventDefault();
     const navigate = useNavigate();
 
-=======
-  const SendData =async (e)=>{
-    e.preventDefault();
->>>>>>> 8202797d1963a204dae46f54c43e9182a86faa3f
     await loginUser(user)
     .then(res => {
       if (res.success) {
@@ -28,11 +23,7 @@ export default function Login() {
         const decoded = jwt_decode(token);
         setUser(decoded.user)
         setIsLogin(true)
-<<<<<<< HEAD
         navigate('/Home')
-=======
-        setLogin(false)
->>>>>>> 8202797d1963a204dae46f54c43e9182a86faa3f
       }
     })
     .catch(rej => console.log(rej))
