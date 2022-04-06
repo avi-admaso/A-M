@@ -30,10 +30,7 @@ const { isLogin } = useContext(UserContext)
         }
       <Routes>
         {/** Public Routes **/}
-        {/* <Route path="/" element={isLogin?navigate("/Home"):<Landing/>} /> */}
         <Route  path="/" element={<Landing/> }/>
-        {/* <Route path="/SignUp" element={<SignUp />} />
-        <Route path="/Login" element={<Login />} /> */}
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/ContactUs" element={<ContactUs />} />
