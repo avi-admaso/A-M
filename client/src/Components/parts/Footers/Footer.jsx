@@ -6,7 +6,7 @@ export default function Footer() {
           <div className="socialMediaContact">
              <a href="#"><i className="fa fa-facebook" style={{color: "blue"}}></i></a>
              <a href="#"><i className="fa fa-twitter" style={{color: 'rgb(26, 161, 242)'}}></i></a>
-             <a href="#"><i className="fa fa-google" style={{color: 'rgb(15,157,88)'}}></i></a>
+             <a href="#"><i className="fa fa-google" style={{color: 'red'}}></i></a>
            </div>
      </footer>
     );    
