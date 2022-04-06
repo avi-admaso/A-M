@@ -1,4 +1,4 @@
-import React, { useState, useEffect, } from 'react'
+import React, { useState, useEffect, useContext, } from 'react'
 import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import format from "date-fns/format";
 import parse from "date-fns/parse";
@@ -9,6 +9,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./Style.css";
 import { GetAppointmentOfBusiness,AddAppointment } from '../../../services/appointmentService';
+import { UserContext } from '../../../context/UserContext';
 
 const locales = { "en-US": require("date-fns/locale/en-US") };
 
@@ -23,28 +24,11 @@ const localizer = dateFnsLocalizer({
 const events = [];
 
 export default function Calendars() {
-  const [newEvent, setNewEvent] = useState({ title: "", start: "", end: "" })
+  const {user} = useContext(UserContext);
+  const [newEvent, setNewEvent] = useState({ title: "", businessName: "",orderName:`${user.email}` , start: "", end: ""})
   const [allEvent, setAllEvent] = useState(events)
   const [appointment,setAppointment] = useState({});
 
-  const ChangingTheValue = (e) => {
-    appointment[e.target.name] = e.target.value;
-  };
-
-  const SendTheAppointment =(e)=>{
-    e.preventDefault();
-    setAppointment({...appointment})
-    console.log(appointment);
-    setAllEvent([...allEvent, newEvent])
-    AddAppointment(allEvent);
-    console.log(allEvent);
-  }
-
-  function handleAddEvent() {
-    
-    newEvent.allDay = false;
-    SendTheAppointment(newEvent);
-  }
   useEffect(() => {
     GetAppointmentOfBusiness("ben barbaerShop")
       .then(result => {
@@ -56,21 +40,53 @@ export default function Calendars() {
         })
       })
   }, [])
+
+  // const ChangingTheValue = (e) => {
+  //   appointment[e.target.name] = e.target.value;
+  // };
+
+  // const SendTheAppointment =(e)=>{
+  //   e.preventDefault();
+  //   setAppointment({...appointment})
+  //   console.log(appointment);
+  //   setAllEvent([...allEvent, newEvent])
+  //   AddAppointment(allEvent);
+  //   console.log(allEvent);
+  // }
+
+  function handleAddEvent() {
+    
+    newEvent.allDay = false;
+    setAllEvent([...allEvent,newEvent]);
+    console.log(allEvent);
+    console.log(newEvent);
+    AddAppointment(newEvent).then((data) => {
+        console.log(data);
+    })
+    // SendTheAppointment(newEvent);
+  }
+
   
   return (<section className='main'>
     <h1>Calendar</h1>
     <h2>You went to Haircut</h2>
+
     <div>
-      <input type="text" placeholder='Enter your name' style={{ width: "20%", marginRight: "10px" }}
-        value={newEvent.title} onChange={ChangingTheValue} 
-        name="title" 
+      <input type="text" placeholder='Enter your title' style={{ width: "20%", marginRight: "10px" }}
+        onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })} 
       />
+
+      <input type="text" placeholder='Enter your businessName' style={{ width: "20%", marginRight: "10px" }}
+        onChange={(e) => setNewEvent({ ...newEvent, businessName: e.target.value })} 
+      />
+
       <DatePicker placeholderText='Start Data' style={{ marginRight: "10px" }}
         selected={newEvent.start} onChange={(start) => setNewEvent({ ...newEvent, start })} showTimeSelect timeIntervals={30} name="start" />
       <DatePicker placeholderText='End Data'
         selected={newEvent.end} onChange={(end) => setNewEvent({ ...newEvent, end })} showTimeSelect timeIntervals={30} name="end"/>
       <button style={{ marginTop: "10px" }} onClick={handleAddEvent}>Click</button>
     </div>
+
     <Calendar
       localizer={localizer}
       events={allEvent}

@@ -23,12 +23,12 @@ module.exports = {
     },
     AddBuisiness: async (req, res) => {
         try {
-            const { firstName, lastName, email, phoneNumber, role, businessName,image } = req.body;
-            const user = new buisiness({ firstName, lastName, email, phoneNumber, role, businessName,image });
-            if (!user) return res.status(400).json({ success: false, message: "user not valid" })
-
-            await buisiness.create(user)
-                .then(() => res.status(201).json({ success: true, message: "user successfully added" }))
+            // const { firstName, lastName, email, phoneNumber, role, businessName,image } = req.body;
+            // const user = new buisiness({  phoneNumber, role, businessName,image });
+            // if (!user) return res.status(400).json({ success: false, message: "user not valid" })
+console.log(req.body)
+            await buisiness.create(req.body)
+                .then(() => res.status(201).json({ success: true, message: "buisiness successfully added" }))
                 .catch((err) => res.status(400).json({ success: false, message: err.message }))
         }
         catch (err) {

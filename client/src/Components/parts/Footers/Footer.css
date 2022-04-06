@@ -10,7 +10,7 @@ footer .socialMediaContact > a {
   text-align: center;
   border-radius: 50%;
   box-shadow: 0 0 0 2px rgb(255, 255, 255);
-  margin: 15px 30px;
+  margin: 0px 50px;
   color: rgb(0, 0, 0);
   opacity: 0.75;
 }
@@ -19,7 +19,7 @@ footer .socialMediaContact > a:hover {
   opacity: 2;
 }
 .footer{
-    margin-top: 1rem;
+    margin-top: 5px;
     padding: 1rem;
     background-color: rgb(0, 0, 0);
     position: fixed;
@@ -27,7 +27,7 @@ footer .socialMediaContact > a:hover {
     width: 100%;
     bottom: 0;
     left: 0;
-        width: 100%;
-    margin-top: 15%;
+    height: 5%;
+    /* margin-top: 15%; */
     text-align: center;
   }
