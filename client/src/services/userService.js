@@ -52,13 +52,13 @@ export const loginUser = async (user) => {
     }
 
 }
-export const UpdateUser = async (id, user) => {
+export const UpdateUser = async (id,user) => {
     try {
         return await fetch(`${BASIC_API}/${id}`, {
             method: "PUT",
             body: JSON.stringify(user),
             headers: {
-                "content-type": "application/json"
+                'Content-Type': 'application/json'
             }
         })
             .then(response => response.json())
