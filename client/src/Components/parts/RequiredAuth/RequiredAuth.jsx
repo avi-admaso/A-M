@@ -6,7 +6,7 @@ export default function RequiredAuth() {
   const {isLogin} = useContext(UserContext)
   return (
     <>
-    {isLogin ? <Outlet/> : <Link to='Login' />}
+    {isLogin ? <Outlet/> : <Link to='/Login' />}
     </>    
   )
 }
