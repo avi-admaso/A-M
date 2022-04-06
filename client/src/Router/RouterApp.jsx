@@ -34,6 +34,8 @@ const { isLogin } = useContext(UserContext)
         <Route  path="/" element={<Landing/> }/>
         {/* <Route path="/SignUp" element={<SignUp />} />
         <Route path="/Login" element={<Login />} /> */}
+        <Route path="/SignUp" element={<SignUp />} />
+        <Route path="/Login" element={<Login />} />
         <Route path="/ContactUs" element={<ContactUs />} />
         <Route path="/AboutUs" element={<AboutUs />} />
         

@@ -11,9 +11,8 @@ export default function Login() {
     user[e.target.name] = e.target.value
     setUser({ ... user })
   }
-
-  const SendData =async (e)=>{
-    e.preventDefault();
+  const SendData =async ()=>{
+    // e.preventDefault();
     await loginUser(user)
     .then(res => {
       if (res.success) {
@@ -23,9 +22,7 @@ export default function Login() {
         const decoded = jwt_decode(token);
         setUser(decoded.user)
         setIsLogin(true)
-        setLogin(false)
         navigate('/Home')
-
       }
     })
     .catch(rej => console.log(rej))
