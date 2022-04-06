@@ -68,13 +68,15 @@ export default function Calendars() {
 
   
   return (<section className='main'>
+
+    <section className='calender'>
+
+    <div className='formStyle'>
     <h1>Calendar</h1>
     <h2>You went to Haircut</h2>
-
-    <div>
       <input type="text" placeholder='Enter your title' style={{ width: "20%", marginRight: "10px" }}
         onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })} 
-      />
+      /> <br></br>
 
       <input type="text" placeholder='Enter your businessName' style={{ width: "20%", marginRight: "10px" }}
         onChange={(e) => setNewEvent({ ...newEvent, businessName: e.target.value })} 
@@ -86,14 +88,18 @@ export default function Calendars() {
         selected={newEvent.end} onChange={(end) => setNewEvent({ ...newEvent, end })} showTimeSelect timeIntervals={30} name="end"/>
       <button style={{ marginTop: "10px" }} onClick={handleAddEvent}>Click</button>
     </div>
+<div className='calendarStyle'>
 
     <Calendar
       localizer={localizer}
       events={allEvent}
       startAccessor="start"
       endAccessor="end"
-      style={{ height: 500, margin: "50px" }}
-    />
+      // style={{ height: "100%", marginLeft: "50px",width:"400px" }}
+      />
+      </div>
+  </section>
   </section>)
+
 
 }
