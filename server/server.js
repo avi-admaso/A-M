@@ -13,10 +13,12 @@ app.use(express.json());
 app.use(passport.initialize());
 app.use(cors());
 app.use('/api',userRoutes);
-app.use('/api',passport.authenticate("jwt",{session:false}),businessRoutes);
-app.use('/api',passport.authenticate("jwt",{session:false}),appointments);
+app.use('/api',businessRoutes);
+app.use('/api',appointments);
+// app.use('/api',passport.authenticate("jwt",{session:false}),businessRoutes);
+// app.use('/api',passport.authenticate("jwt",{session:false}),appointments);
 
-const port=process.env.PORT ;
+const port=process.env.PORT || 8100 ;
 app.listen(port);
 
 

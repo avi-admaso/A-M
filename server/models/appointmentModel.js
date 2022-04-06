@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 const  Appointment = new mongoose.Schema(
   {
-    title:{type:String, require:true},
-    businessName:{type:String, require:true},
-    start:{type:Date, require:true},
-    end:{type:Date, require:true},
-    orderName:{type:String, require:true},
+    title:{type:String, required: true},
+    businessName:{type:String, required: true},
+    start:{type:Date, required: true},
+    end:{type:Date, required: true},
+    orderName:{type:String, required: true},
   },
 
   { timestamps: true }
