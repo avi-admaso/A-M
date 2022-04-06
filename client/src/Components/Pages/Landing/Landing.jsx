@@ -27,11 +27,6 @@ const Landing = () => {
           navigate("/Home")
       }
 
-      {/* <label className="">Login</label>
-       <input type="text" />
-       <label className="">password</label>
-       <input type="text" /> */}
-
     </div>
   );
 };
