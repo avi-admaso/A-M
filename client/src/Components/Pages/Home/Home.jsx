@@ -1,7 +1,9 @@
-import React from 'react'
+import Calendars from '../Calendar/Calendars'
 
 export default function Home() {
   return (
-    <div className='main'>Home</div>
+    <div className='main'>
+      <Calendars/>
+    </div>
   )
 }
