@@ -39,16 +39,16 @@ export default function SignUp() {
     <div className='signUp'>
       <span className='close_popUp' onClick={ClosePopUp}>x</span>
       <h1>Sign Up</h1>
-      <label htmlFor="">first Name</label>
-      <input type="text" name='firstName' onChange={InputValue} />
-      <label htmlFor="">last Name</label>
-      <input type="text" name='lastName' onChange={InputValue} />
-      <label htmlFor="">Email</label>
-      <input type="text" name='email' onChange={InputValue} />
-      <label htmlFor="">phone Number</label>
-      <input type="text" name='phoneNumber' onChange={InputValue} />
-      <label htmlFor="">password</label>
-      <input type="text" name='password' onChange={InputValue} />
+      <label htmlFor="">first Name:</label>
+      <input type="text" name='firstName' onChange={InputValue} /> <br />
+      <label htmlFor="">last Name:</label>
+      <input type="text" name='lastName' onChange={InputValue} /> <br />
+      <label htmlFor="">Email:</label>
+      <input type="text" name='email' onChange={InputValue} /> <br />
+      <label htmlFor="">phone Number:</label>
+      <input type="text" name='phoneNumber' onChange={InputValue} /> <br />
+      <label htmlFor="">password:</label>
+      <input type="text" name='password' onChange={InputValue} /> <br />
       <button onClick={SendData}>Create</button>
     </div>
 

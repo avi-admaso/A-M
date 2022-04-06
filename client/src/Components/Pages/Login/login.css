@@ -4,7 +4,8 @@
 }
 .login{
     position: absolute;
-    background: rgb(174, 201, 174);
+    /* background: rgb(174, 201, 174); */
+    background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
     width: 30vw;
     right: 35%;
     height: 30vh;
