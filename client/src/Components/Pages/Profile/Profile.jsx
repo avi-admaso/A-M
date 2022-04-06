@@ -12,9 +12,10 @@ const Profile = () => {
  }
   return (
     <div className="profilePage main">
+        <h1>Profile Page </h1>
       <div className="details">
-        <h5>Profile</h5>
         <img src={user.image} alt="user image"/>
+        <section className="detailsUser">
         <h4>{user.firstName} {user.lastName}</h4>
         <h4>Email: {user.email}</h4>
         <h4>Phone Number:{user.phoneNumber}</h4>
@@ -25,6 +26,7 @@ const Profile = () => {
           <div></div>
         } 
         <button onClick={toggle}>Edit Profile</button>
+        </section>
       </div>
     </div>
   );

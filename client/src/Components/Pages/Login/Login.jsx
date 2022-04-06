@@ -34,10 +34,10 @@ export default function Login() {
     <div className='login'>
       <span className='close_popUp' onClick={ClosePopUp}>x</span>
       <h1>Login</h1>
-      <label htmlFor="">Email</label>
-      <input type="text" name='email' onChange={InputValue}/>
-      <label htmlFor="">Password</label>
-      <input type="text" name='password' onChange={InputValue}/>
+      <label htmlFor="">Email:</label>
+      <input type="text" name='email' onChange={InputValue}/> <br />
+      <label htmlFor="">Password:</label>
+      <input type="text" name='password' onChange={InputValue}/> <br />
       <button onClick={SendData}>Send</button>
     </div>
   )
