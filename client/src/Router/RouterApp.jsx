@@ -27,15 +27,12 @@ const { isLogin } = useContext(UserContext)
           <SideBar/>:
           <div></div>
         }
-        <SideBar/>
-        <AboutUs/>
+        
       <Routes>
         {/** Public Routes **/}
         <Route path="/" element={<Landing/>} />
-
-        {/* <Route path="/SignUp" element={<SignUp />} />
+        <Route path="/SignUp" element={<SignUp />} />
         <Route path="/Login" element={<Login />} />
-        <Route path="/ContactUs" element={<ContactUs />} /> */}
         <Route path="/ContactUs" element={<ContactUs />} />
         <Route path="/AboutUs" element={<AboutUs />} />
         
