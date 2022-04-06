@@ -4,11 +4,11 @@ import format from "date-fns/format";
 import parse from "date-fns/parse";
 import startOfWeek from 'date-fns/startOfWeek';
 import getDay from 'date-fns/getDay';
-import getHours from 'date-fns/getHours';
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./Style.css";
+import { GetAppointmentOfBusiness } from '../../../services/appointmentService';
 
 const locales = { "en-US": require("date-fns/locale/en-US") };
 
@@ -17,7 +17,6 @@ const localizer = dateFnsLocalizer({
   parse,
   startOfWeek,
   getDay,
-  getHours,
   locales
 });
 
@@ -31,15 +30,16 @@ export default function Calendars() {
     setAllEvent([...allEvent, newEvent])
     newEvent.allDay = false;
   }
-  // useEffect(() => {
-  //     .then(result => {
-  //       result.map(event => {
-  //         event.start = new Date(Date.parse(event.start))
-  //         event.end = new Date(Date.parse(event.end))
-  //         return null;
-  //       })
-  //     })
-  // }, [])
+  useEffect(() => {
+    GetAppointmentOfBusiness()
+      .then(result => {
+        result.map(event => {
+          event.start = new Date(Date.parse(event.start))
+          event.end = new Date(Date.parse(event.end))
+          return null;
+        })
+      })
+  }, [])
   return (<section className='main'>
     <h1>Calendar</h1>
     <h2>You went to Haircut</h2>
