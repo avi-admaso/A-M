@@ -37,3 +37,20 @@ const EditProfile = () => {
   );
 };
 export default EditProfile;
+
+
+
+{/* <div className="EditProfile">
+       
+<button className='close_editPopUp' >x</button>
+<form>
+<h1 >Edit Profile</h1><br/>
+<input type="text" name="firstName" onChange={InputValue} defaultValue={user.firstName} />
+<input type="text" name="lastName" deonChange={InputValue} defaultValue={user.lastName} />
+<input type="text" name="email" onChange={InputValue} defaultValue={user.email}  />
+<input type="text" name="image" onChange={InputValue} defaultValue={user.image} />
+<input type="text" name="phoneNumber" onChange={InputValue} defaultValue={user.phoneNumber } /><br/>
+<button onClick={tt} >save</button>
+</form> */}
+
+// </div>
