@@ -46,6 +46,23 @@ export const GetAppointmentOfBusiness = async (BusinessName) => {
         return error
     }
 }
+export const AddAppointment = async (appointment)=>{
+    const options= {
+        method:"POST",
+        body: JSON.stringify({...appointment}),
+        headers: {
+            "content-type": "application/json",
+            "Authorization": `Bearer ${localStorage.getItem("token")} `
+        }}
+        try {
+            return await fetch(`${BASIC_API}/Business/${BusinessName}`,options)
+                .then(response => response.json())
+                .catch(reject => console.error(reject))
+        } catch (error) {
+            return error
+        }
+    }
+
 
 export const CreateAppointment = async (appointment) => {
     try {
