@@ -55,7 +55,7 @@ export const AddAppointment = async (appointment)=>{
             "Authorization": `Bearer ${localStorage.getItem("token")} `
         }}
         try {
-            return await fetch(`${BASIC_API}/Business/${BusinessName}`,options)
+            return await fetch(`${BASIC_API}`,options)
                 .then(response => response.json())
                 .catch(reject => console.error(reject))
         } catch (error) {

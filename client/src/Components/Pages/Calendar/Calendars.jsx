@@ -56,6 +56,7 @@ export default function Calendars() {
         })
       })
   }, [])
+  
   return (<section className='main'>
     <h1>Calendar</h1>
     <h2>You went to Haircut</h2>
