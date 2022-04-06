@@ -4,7 +4,7 @@ import { UserContext } from "../../../context/UserContext";
 import {UpdateUser} from "../../../services/userService"
 
 const EditProfile = () => {
-    const { user } = useContext(UserContext);
+    const { user , setU} = useContext(UserContext);
     const [upDate,setUpData]=useState({})
 const InputValue =(e)=>{
     upDate[e.target.name]=e.target.value
@@ -14,7 +14,6 @@ const InputValue =(e)=>{
         e.preventDefault()
         console.log(user._id);
         UpdateUser(user._id,upDate).then((res) => console.log(res));
-        // console.log(upDate);
     }
   return (
     <div>
