@@ -23,9 +23,11 @@ module.exports = {
     },
     GetAppointmentOfBusiness: async (req, res) => {
         try {
-            const appointment = await appointment.find({ businessName: req.params.BusinessName });
-            if (appointment) return res.status(200).json({ success: true, appointment });
-            res.status(404).json({ success: false, message: "no appointments found" });
+            await appointment.find({ businessName: req.params.BusinessName }).then((appointment) => {
+
+                if (appointment) return res.status(200).json({ success: true, appointment });
+                res.status(404).json({ success: false, message: "no appointments found" });
+            })
         }
         catch (err) {
             res.status(500).json({ success: false, message: err.message });
