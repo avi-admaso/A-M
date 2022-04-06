@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route , useNavigate} from "react-router-dom";
 import Home from "../Components/Pages/Home/Home";
 import Footer from "../Components/parts/Footers/Footer"
 import SignUp from "../Components/Pages/SignUp/SignUp"
@@ -14,6 +14,7 @@ import SideBar from "../Components/parts/SideBar/SideBar";
 import Calendars from "../Components/Pages/Calendar/Calendars";
 import NavBar from "../Components/parts/navbar/Nav-Bar"
 import Landing from "../Components/Pages/Landing/Landing";
+import LogOut from "../Components/parts/Log-out/LogOut";
 import { useContext } from "react";
 import { UserContext } from "../context/UserContext";
 import AboutUs from "../Components/parts/AboutUs/AboutUs";
@@ -27,10 +28,9 @@ const { isLogin } = useContext(UserContext)
           <SideBar/>:
           <div></div>
         }
-        
       <Routes>
         {/** Public Routes **/}
-        <Route path="/" element={<Landing/>} />
+        <Route  path="/" element={<Landing/> }/>
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/ContactUs" element={<ContactUs />} />

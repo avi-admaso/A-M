@@ -6,9 +6,10 @@
 }
 .profilePage .details{
 width: 60%;
-height: 330px;
+height: 300px;
 border: solid 5px black;
 border-radius: 20px;
+margin-bottom: 100px;
 
 }
 .details img{
@@ -16,6 +17,7 @@ border-radius: 20px;
     height: 50px;
     border-radius: 50%;
     border: solid 2px black;
+
 }
 
 button{
