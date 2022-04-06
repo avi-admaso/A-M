@@ -2,10 +2,10 @@ const mongoose = require("mongoose");
 const  Business = new mongoose.Schema(
   {
     image:{type: String ,default:"" },
-    phoneNumber:{type: String, require: true},
+    phoneNumber:{type: String, required},
     isAdmin:{type: Boolean},
-    businessName:{type: String, require: true},
-    businessNumber:{type: String, require: true},
+    businessName:{type: String, required},
+    businessNumber:{type: String, required},
     
   },
 
