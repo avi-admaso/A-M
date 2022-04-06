@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route , useNavigate} from "react-router-dom";
+import { BrowserRouter, Routes, Route ,Link, useNavigate} from "react-router-dom";
 import Home from "../Components/Pages/Home/Home";
 import Footer from "../Components/parts/Footers/Footer"
 import SignUp from "../Components/Pages/SignUp/SignUp"
@@ -30,7 +30,7 @@ const { isLogin } = useContext(UserContext)
         }
       <Routes>
         {/** Public Routes **/}
-        <Route  path="/" element={<Landing/> }/>
+        <Route  path="/" element={<Landing/>}/>
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/ContactUs" element={<ContactUs />} />
