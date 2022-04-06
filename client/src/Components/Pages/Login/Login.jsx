@@ -13,8 +13,6 @@ export default function Login() {
   }
   const SendData =async ()=>{
     // e.preventDefault();
-    const navigate = useNavigate();
-
     await loginUser(user)
     .then(res => {
       if (res.success) {
