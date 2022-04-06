@@ -6,6 +6,9 @@ import './signUp.css'
 import { useNavigate } from 'react-router-dom';
 export default function SignUp() {
   const { user, setUser, setIsLogin, setSignUp } = useContext(UserContext)
+  const navigate = useNavigate();
+
+  
   const InputValue = (e) => {
     user[e.target.name] = e.target.value
     setUser({ ...user })
@@ -13,8 +16,6 @@ export default function SignUp() {
 
   const SendData =async (e)=>{
     e.preventDefault();
-    const navigate = useNavigate();
-
     await registerNewUser(user)
     .then(res => {
       if (res.success) {
