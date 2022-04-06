@@ -11,9 +11,8 @@ export default function SignUp() {
     setUser({ ...user })
   }
 
-<<<<<<< HEAD
   const SendData =async (e)=>{
-    // e.preventDefault();
+    e.preventDefault();
     const navigate = useNavigate();
 
     await registerNewUser(user)
@@ -31,39 +30,7 @@ export default function SignUp() {
     .catch(rej => console.log(rej))
   }
 
-  // const SendData =async (e)=>{
-  //   e.preventDefault();
-  //   await loginUser(user)
-  //   .then(res => {
-  //     if (res.success) {
-  //       localStorage.setItem("token", res.token);
-  //       console.log("success");
-  //       const token = localStorage.getItem("token");
-  //       const decoded = jwt_decode(token);
-  //       setUser(decoded.user)
-  //     }
-  //   })
-  //   .catch(rej => console.log(rej))
-  // }
-=======
-  const SendData = async (e) => {
-    e.preventDefault();
-    await registerNewUser(user)
-      .then(res => {
-        if (res.success) {
-          localStorage.setItem("token", res.token);
-          console.log("success");
-          const token = localStorage.getItem("token");
-          const decoded = jwt_decode(token);
-          setUser(decoded.user);
-          setIsLogin(true);
-          setSignUp(false);
->>>>>>> 8202797d1963a204dae46f54c43e9182a86faa3f
 
-        }
-      })
-      .catch(rej => console.log(rej))
-  }
   const ClosePopUp = () => {
     setSignUp(false)
   }
