@@ -1,15 +1,15 @@
 import  "./landing.css"
 import Login from '../Login/Login'
 import SignUp from '../SignUp/SignUp'
-import { useState} from 'react'
+import { useState , useContext} from 'react'
+import { UserContext } from "../../../context/UserContext"
 const Landing = () => {
-const [login,setLogin] = useState(false)
-const [sign,setSign] = useState(false)
+const {login, setLogin,signUp, setSignUp} = useContext(UserContext)
 const PresentLogin = ()=>{
 setLogin(!login)
 }
 const PresentLogin2 = ()=>{
-setSign(!sign)
+  setSignUp(!signUp)
 }
   return (
     <div className="Landing main" >    
@@ -17,7 +17,7 @@ setSign(!sign)
        <button onClick={PresentLogin}>Login</button>
        {login?<Login/>:<div></div>}
        <button onClick={PresentLogin2}>Sign Up</button>
-       {sign?<SignUp/>:<div></div>}
+       {signUp?<SignUp/>:<div></div>}
        {/* <label className="">Login</label>
        <input type="text" />
        <label className="">password</label>
