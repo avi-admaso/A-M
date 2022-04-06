@@ -6,7 +6,9 @@ const  Business = new mongoose.Schema(
     isAdmin:{type: Boolean},
     businessName:{type: String, required: true,unique: true},
     businessNumber:{type: String, required: true},
-    
+    serviceOptions:{type: Array,required: true},
+    openingHours:{type: Array,required: true},
+    serviceDuretion:{type: Number}
   },
 
   { timestamps: true }
