@@ -1,5 +1,6 @@
+const { findOne } = require("../models/buisinessModel");
 const buisiness = require("../models/buisinessModel");
-
+const Users = require('../models/userModel');
 module.exports = {
     GetBuisiness: async (req, res) => {
         try {
@@ -28,7 +29,12 @@ module.exports = {
             // if (!user) return res.status(400).json({ success: false, message: "user not valid" })
             console.log(req.body)
             await buisiness.create(req.body)
-                .then(() => res.status(201).json({ success: true, message: "buisiness successfully added" }))
+                .then(async (buisiness)  =>{
+                 const buisinessData = await Users.findOne({ _id: req.params.id })
+                 buisinessData.businessName = buisiness.businessName
+                 await buisinessData.save()
+                      res.status(201).json({ success: true, message: "buisiness successfully added" })
+                      })
                 .catch((err) => res.status(400).json({ success: false, message: err.message }))
         }
         catch (err) {

@@ -1,0 +1,21 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.CreateBusiness{
+    position: absolute;
+    background: rgb(174, 201, 174);
+    bottom: 30%;
+    padding: 15px;
+    width: 30vw;
+    right: 35%;
+    height: 55vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+.CreateBusiness input{
+    width: 30vw;
+    height: 5vh;
+}

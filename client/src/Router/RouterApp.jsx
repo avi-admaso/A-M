@@ -18,6 +18,7 @@ import LogOut from "../Components/parts/Log-out/LogOut";
 import { useContext } from "react";
 import { UserContext } from "../context/UserContext";
 import AboutUs from "../Components/parts/AboutUs/AboutUs";
+import CreateBusiness from "../Components/Pages/CreateBusiness/CreateBusiness";
 export default function RouterApp(){
 const { isLogin } = useContext(UserContext)
   return (
@@ -44,6 +45,7 @@ const { isLogin } = useContext(UserContext)
              <Route path="/HistoricalAppointment" element={<HistoricalAppointment/>}/>
              <Route path="/SetAppointment" element={<SetAppointment/>}/>
              <Route path="/NextAppointment" element={<NextAppointment/>}/>
+             <Route path="/CreateBusiness" element={<CreateBusiness/>}/>
         </Route>
         <Route path="*" element={<Page404 />} />
       </Routes>

@@ -9,6 +9,7 @@ const [isLogOut,setIsLogOut] = useState(false);
         <Link to="/Profile">Profile</Link>
         <Link to="/SetAppointment">Set Appointment</Link>
         <Link to="/NextAppointment">Next Appointment</Link>
+        <Link to="/CreateBusiness">Create Business</Link>
         <button onClick={()=> setIsLogOut(true)}>OUT</button>
         {isLogOut?<LogOut/>:<div></div>} 
     </div>

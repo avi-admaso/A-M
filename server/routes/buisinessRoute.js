@@ -4,7 +4,7 @@ const { GetBuisiness,GetBuisinessById, AddBuisiness, UpdateBuisiness, DeleteBuis
 
 buisinessRoutes.get("/buisiness", GetBuisiness);
 buisinessRoutes.get("/buisiness/:id", GetBuisinessById);
-buisinessRoutes.post("/buisiness", AddBuisiness);
+buisinessRoutes.post("/buisiness/:id", AddBuisiness);
 buisinessRoutes.put("/buisiness/:id", UpdateBuisiness);
 buisinessRoutes.delete("/buisiness/:id", DeleteBuisiness);
 // buisinessRoutes.post("/buisiness/register", register);

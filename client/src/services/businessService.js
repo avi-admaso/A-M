@@ -1,4 +1,4 @@
-const BASIC_API = "http://localhost:8100/api/business"
+const BASIC_API = "http://localhost:8100/api/buisiness"
 
 export const GetAllBusiness = async () => {
     let options ={
@@ -31,9 +31,9 @@ export const GetBusinessById = async (id) => {
     }
 }
 
-export const CreateBusiness = async (Business) => {
+export const AddBusiness = async (Business,id) => {
     try {
-        return await fetch(`${BASIC_API}`, {
+        return await fetch(`${BASIC_API}/${id}`, {
             method: 'POST',
             body: JSON.stringify(Business),
             headers: {
