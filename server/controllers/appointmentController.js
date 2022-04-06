@@ -33,11 +33,11 @@ module.exports = {
     },
     AddAppointment: async (req, res) => {
         try {
-            const { appointmentName, title, start, end, orderName } = req.body;
-            const appointment = new appointment({ appointmentName, title, start, end,orderName });
+            // const {title,businessName, start, end, orderName } = req.body;
+            // const appointment = new appointment({title,businessName, start, end,orderName });
             if (!appointment) return res.status(400).json({ success: false, message: "appointment not valid" })
 
-            await appointment.create(user)
+            await appointment.create(req.body)
                 .then(() => res.status(201).json({ success: true, message: "appointment added successfully " }))
                 .catch((err) => res.status(400).json({ success: false, message: err.message }))
         }
