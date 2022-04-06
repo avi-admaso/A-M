@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import './login.css'
 export default function Login() {
   const {user, setUser ,setIsLogin , setLogin} = useContext(UserContext)
+  const navigate = useNavigate();
   const InputValue = (e) => {
     user[e.target.name] = e.target.value
     setUser({ ... user })
