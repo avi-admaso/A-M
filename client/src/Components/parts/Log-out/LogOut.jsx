@@ -9,7 +9,7 @@ const LogOutFromApp = ()=>{
     setUser({})
     setIsLogin(false)
     localStorage.removeItem("token")
-    navigate('/Login')
+    navigate('/')
 }
 return(
     <div>
