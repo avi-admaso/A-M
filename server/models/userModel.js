@@ -6,7 +6,7 @@ const User = new mongoose.Schema(
     email: { type: String, required: true, unique: true },
     image:{type: String , default:"https://pixabay.com/vectors/blank-profile-picture-mystery-man-973460/"},
     phoneNumber:{type: String, required: true},
-    isAdmin:{type: Boolean},
+    isAdmin:{type: Boolean,default:false},
     historyAppointment:{type: Array},
     nextAppointment:{type: Array},
     businessName:{type: String, default:""},
