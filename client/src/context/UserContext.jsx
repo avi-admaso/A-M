@@ -11,7 +11,6 @@ export const UserProvider = ({ children }) => {
             setUser(decoded.user);
             setIsLogin(true)
         }
-        // localStorage.removeItem("token")
     }, [])
     return (
         <UserContext.Provider value={{ user, setUser ,setIsLogin ,isLogin}}>
