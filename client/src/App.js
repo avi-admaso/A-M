@@ -5,7 +5,7 @@ import Login from "./Components/Pages/Login/Login";
 import { UserProvider } from "./context/UserContext";
 import { AppointmentProvider } from "./context/AppointmentContext";
 function App() {
-
+  // useEffect(()=>{localStorage.removeItem("token")},[])
   return (
     <div className="App">
       <UserProvider>

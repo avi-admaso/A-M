@@ -1,11 +1,12 @@
 import { useContext} from "react"
 import { Outlet, Link} from "react-router-dom"
 // import { authContext } from "../../../Context/AuthProvider.component"
-
+import { UserContext } from "../../../context/UserContext"
 export default function RequiredAuth() {
-    // const {auth} = useContext(authContext)
+  const {isLogin} = useContext(UserContext)
   return (
-    // auth.email ? <Outlet/> : <Link to='Login' />
-    <h1>hhh</h1>
+    <>
+    {isLogin ? <Outlet/> : <Link to='/Login' />}
+    </>    
   )
 }

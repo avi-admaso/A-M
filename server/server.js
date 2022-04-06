@@ -18,7 +18,7 @@ app.use('/api',appointments);
 // app.use('/api',passport.authenticate("jwt",{session:false}),businessRoutes);
 // app.use('/api',passport.authenticate("jwt",{session:false}),appointments);
 
-const port=process.env.PORT ;
+const port=process.env.PORT || 8100 ;
 app.listen(port);
 
 
