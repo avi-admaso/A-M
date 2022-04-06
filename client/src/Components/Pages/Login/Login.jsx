@@ -6,19 +6,14 @@ import { useNavigate } from 'react-router-dom';
 import './login.css'
 export default function Login() {
   const {user, setUser ,setIsLogin , setLogin} = useContext(UserContext)
+  const navigate = useNavigate();
   const InputValue = (e) => {
     user[e.target.name] = e.target.value
     setUser({ ... user })
   }
-<<<<<<< HEAD
-  const SendData =async ()=>{
-    // e.preventDefault();
-    const navigate = useNavigate();
 
-=======
   const SendData =async (e)=>{
     e.preventDefault();
->>>>>>> 8202797d1963a204dae46f54c43e9182a86faa3f
     await loginUser(user)
     .then(res => {
       if (res.success) {
@@ -28,11 +23,9 @@ export default function Login() {
         const decoded = jwt_decode(token);
         setUser(decoded.user)
         setIsLogin(true)
-<<<<<<< HEAD
-        navigate('/Home')
-=======
         setLogin(false)
->>>>>>> 8202797d1963a204dae46f54c43e9182a86faa3f
+        navigate('/Home')
+
       }
     })
     .catch(rej => console.log(rej))
