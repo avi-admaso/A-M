@@ -13,11 +13,9 @@ const Profile = () => {
   return (
     <div className="profilePage main">
       <div className="details">
-        <h4>
-          <img src={user.image} />
-        </h4>
-        <h4>firstName: {user.firstName}</h4>
-        <h4>LastName : {user.lastName}</h4>
+        <h5>Profile</h5>
+        <img src={user.image} alt="user image"/>
+        <h4>{user.firstName} {user.lastName}</h4>
         <h4>Email: {user.email}</h4>
         <h4>Phone Number:{user.phoneNumber}</h4>
        
